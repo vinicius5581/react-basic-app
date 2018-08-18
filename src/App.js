@@ -1,18 +1,20 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import ChildComponent from "./ChildComponent";
+import AnotherChildComponent from "./AnotherChildComponent";
 
 class App extends Component {
+  state = {
+    people: [
+      { id: 1, name: "Santana", age: 18 },
+      { id: 2, name: "Nanda", age: 20 }
+    ]
+  };
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <h1>React app</h1>
+        <ChildComponent name={"Vini"} age={"37"} />
+        <AnotherChildComponent people={this.state.people} />
       </div>
     );
   }
