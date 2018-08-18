@@ -10,13 +10,22 @@ class App extends Component {
       { id: 2, name: "Nanda", age: 20 }
     ]
   };
+
+  addPerson = person => {
+    person.id = Math.random() * 10;
+    const peopleUpdated = [...this.state.people, person];
+    this.setState({
+      people: peopleUpdated
+    });
+  };
+
   render() {
     return (
       <div className="App">
         <h1>React app</h1>
         <ChildComponent name={"Vini"} age={"37"} />
         <AnotherChildComponent people={this.state.people} />
-        <AddPerson />
+        <AddPerson addPerson={this.addPerson} />
       </div>
     );
   }
