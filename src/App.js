@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ChildComponent from "./ChildComponent";
 import AnotherChildComponent from "./AnotherChildComponent";
+import AddPerson from "./AddPerson";
 
 class App extends Component {
   state = {
@@ -15,6 +16,7 @@ class App extends Component {
         <h1>React app</h1>
         <ChildComponent name={"Vini"} age={"37"} />
         <AnotherChildComponent people={this.state.people} />
+        <AddPerson />
       </div>
     );
   }
